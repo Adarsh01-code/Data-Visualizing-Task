@@ -1,26 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
+import './App.css';
+import {LineChart} from './components/LineChart';
+import {BarChart} from './components/BarChart';
+import { Box } from '@chakra-ui/react';
 import './App.css';
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    
+    <div className="p-5 bg-gray-100 flex flex-col items-center mx-auto max-w-full grainy">
+      <h1 className="text-3xl font-bold my-8">Data Visualizer</h1>
+      <Box className="h-full w-full max-w-7xl bg-white shadow-lg rounded-lg p-5 mb-10 sm:p-4 sm:mb-8">
+        <h2 className="text-xl font-bold mb-5">Line Chart</h2>
+        <LineChart />
+      </Box>
+
+      <Box className="h-full w-full max-w-7xl bg-white shadow-lg rounded-lg p-5 sm:p-4">
+        <h2 className="text-xl font-bold mb-5">Bar Chart</h2>
+        <BarChart />
+      </Box>
     </div>
   );
-}
+};
 
 export default App;
+
+

@@ -1,9 +1,9 @@
 // Importing necessary React and Chakra UI components, as well as ECharts for React.
 import React, { useState } from 'react';
-import ReactECharts from 'echarts-for-react'; // ECharts wrapper for React to create dynamic and interactive charts.
-import { Menu, MenuButton, MenuList, MenuItem, Button, Box } from '@chakra-ui/react'; // Chakra UI components for UI design.
-import { ChevronDownIcon } from '@chakra-ui/icons'; // Chakra UI icon for visual enhancement.
-import wineData from '../data/WineData.json'; // Importing the dataset used for the visualizations.
+import ReactECharts from 'echarts-for-react'; 
+import { Menu, MenuButton, MenuList, MenuItem, Button, Box } from '@chakra-ui/react'; 
+import { ChevronDownIcon } from '@chakra-ui/icons'; 
+import wineData from '../data/WineData.json'; 
 
 
 // DataSelector component for selecting different data metrics from the wine dataset.It dynamically lists down all possible metrics from the dataset for selection.
@@ -43,7 +43,7 @@ export const BarChart: React.FC = () => {
     let metric = data[selectedMetric];
     metric = typeof metric === 'string' ? parseFloat(metric) : metric; // Parsing metric values if they are stored as strings.
     if (!isNaN(metric) && (metricByAlcohol[alcoholCategory] === undefined || metric < metricByAlcohol[alcoholCategory])) {
-      metricByAlcohol[alcoholCategory] = metric; // Storing the minimum value for each alcohol category.
+      metricByAlcohol[alcoholCategory] = metric; 
     }
   });
 
@@ -56,17 +56,17 @@ export const BarChart: React.FC = () => {
     },
     tooltip: {}, // Enabling default tooltip for hover information.
     xAxis: {
-      name: 'Alcohol Category', // X-axis label.
-      type: 'category', // Type of the axis.
-      data: Object.keys(metricByAlcohol).map(Number), // Categories derived from alcohol data.
+      name: 'Alcohol Category', 
+      type: 'category', 
+      data: Object.keys(metricByAlcohol).map(Number), 
     },
     yAxis: {
-      name: `Min ${selectedMetric}`, // Y-axis label, dynamically updated.
-      type: 'value', // Type of the axis.
+      name: `Min ${selectedMetric}`, 
+      type: 'value',
     },
     series: [
       {
-        type: 'bar', // Specifying chart type as bar chart.
+        type: 'bar', 
         data: Object.values(metricByAlcohol).map(value => ({
           value,
           itemStyle: {

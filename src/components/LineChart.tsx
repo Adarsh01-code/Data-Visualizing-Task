@@ -1,28 +1,28 @@
 import React, { useState } from 'react';
-import ReactECharts from 'echarts-for-react'; // Importing ECharts for React for data visualization.
+import ReactECharts from 'echarts-for-react'; 
 import { Menu, MenuButton, MenuList, MenuItem, Button, Box } from '@chakra-ui/react'; // Importing components from Chakra UI for UI design.
 import { ChevronDownIcon } from '@chakra-ui/icons'; 
-import wineData from '../data/WineData.json'; // Importing the dataset.
+import wineData from '../data/WineData.json'; 
 
 // LineChart component that visualizes the relationship between two selected metrics from the wine dataset.
 const LineChart: React.FC = () => {
-  // State hooks for the X and Y axis metrics.
+  
   const [xAxis, setXAxis] = useState('Flavanoids');
   const [yAxis, setYAxis] = useState('Ash');
 
   // Function to generate a random color for the line chart.
   const getRandomColor = () => '#' + Math.floor(Math.random()*16777215).toString(16);
 
-  // Chart configuration object.
+  
   const option = {
     xAxis: {
       type: 'category',
       data: wineData.map((item:any) => item[xAxis]),
-      name: xAxis, // Label for the X axis based on selected metric.
+      name: xAxis, 
     },
     yAxis: {
       type: 'value',
-      name: yAxis, // Label for the Y axis based on selected metric.
+      name: yAxis, 
     },
     series: [{
       data: wineData.map((item:any) => item[yAxis]),
@@ -32,7 +32,7 @@ const LineChart: React.FC = () => {
       },
     }],
     tooltip: {
-      trigger: 'axis', // Show tooltip for items when hovering over the chart.
+      trigger: 'axis', 
     },
   };
 

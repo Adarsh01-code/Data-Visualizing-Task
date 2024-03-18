@@ -34,14 +34,22 @@ const LineChart: React.FC = () => {
     },
   };
 
+  function truncate(text:string, maxLength:number):string {
+    if (text.length > maxLength) {
+      return text.substring(0, maxLength) + '...';
+    } else {
+      return text;
+    }
+  }
+
   return (
     <div>
-      <Box display="flex" justifyContent="space-between" mb="4">
-        <DataSelector label={`X-Axis: ${xAxis}`} onSelect={setXAxis} />
-        <DataSelector label={`Y-Axis: ${yAxis}`} onSelect={setYAxis} />
-      </Box>
-      <ReactECharts option={option} />
-    </div>
+    <Box display="flex" justifyContent="space-between" mb="4">
+      <DataSelector label={`X-Axis: ${truncate(xAxis, 4)}`} onSelect={setXAxis} />
+      <DataSelector label={`Y-Axis: ${truncate(yAxis, 4)}`} onSelect={setYAxis} />
+    </Box>
+    <ReactECharts option={option} />
+  </div>
   );
 };
 

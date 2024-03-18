@@ -26,14 +26,10 @@ Navigate to the project directory and install dependencies with **yarn install**
 
 Start the development server with yarn start. The application will automatically open in your default web browser.
 
-$PROJECT_ROOT
-├── App.js         # Entry point
-├── screens        # Screen components
-├── components     # UI components
-├── slices         # Redux slices (state management)
-├── assets         # Image files
+
 
 **Project Structure**
+```
 $PROJECT_ROOT
 ├── public                  # Public files including index.html
 ├── src                     # Source files
@@ -48,6 +44,7 @@ $PROJECT_ROOT
 ├── package.json            # Project metadata and dependencies
 ├── tsconfig.json           # TypeScript configuration
 └── yarn.lock               # Yarn lock file (do not edit manually)
+```
 
 
 

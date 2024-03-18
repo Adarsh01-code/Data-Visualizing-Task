@@ -1,46 +1,54 @@
-# Getting Started with Create React App
+This project is a web-based application designed to visually represent a dataset concerning wine attributes using React and ECharts.   
+It showcases the power of data visualization in extracting and presenting insights from complex datasets. 
+Developed with **TypeScript** and leveraging the **ECharts** library wrapped in React components, this application presents an interactive and user-friendly interface for exploring wine data through line and bar charts.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Features**
+**Interactive Line Chart:** Visualizes the relationship between "Flavanoids" and "Ash" within the wine dataset, allowing users to explore how these two attributes correlate across different samples.
 
-## Available Scripts
+**Dynamic Bar Chart:** Displays the minimum "Magnesium" values for different "Alcohol" categories, providing insights into the compositional variance across wine types.
 
-In the project directory, you can run:
+**Responsive Design:** Ensures a seamless user experience across various devices, including iPhone 5, iPhone X, iPad, iPad Pro, and general laptops.
 
-### `npm start`
+**No Extra Dependencies:** Built using only essential libraries and tools, focusing on the core functionalities of React, TypeScript, and ECharts without relying on additional frameworks or utility libraries.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+**Technology Stack**
+**React:** Utilized for its efficient, declarative, and flexible approach to building user interfaces.
+**TypeScript:** Provides type safety and enhances code quality and maintainability.
+**ECharts for React:** Offers a comprehensive suite of charting and visualization tools for a wide array of data presentation needs.
+**Chakra UI:** Supports the design system with a simple, modular and accessible component library for building a responsive UI.
+**Yarn:** Used for managing project dependencies and ensuring consistent setups across environments.  
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+**Getting Started**
+To run this project locally:
 
-### `npm test`
+Clone the repository to your local machine.
+Navigate to the project directory and install dependencies with **yarn install**.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Start the development server with yarn start. The application will automatically open in your default web browser.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Project Structure**
+$PROJECT_ROOT
+├── public                  # Public files including index.html
+├── src                     # Source files
+│   ├── components          # Reusable components
+│   │   ├── LineChart.tsx   # Line chart component
+│   │   └── BarChart.tsx    # Bar chart component
+│   ├── data                # Data for the project
+│   │   └── WineData.json   # Dataset used for visualization
+│   ├── App.css             # Global styles
+│   ├── App.tsx             # Entry point of the application
+│   └── index.tsx           # Root React component
+├── package.json            # Project metadata and dependencies
+├── tsconfig.json           # TypeScript configuration
+└── yarn.lock               # Yarn lock file (do not edit manually)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+**ScreenShots**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![My Image](assets/LineChart.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![My Image](assets/BarChart.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
